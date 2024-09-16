@@ -1,0 +1,94 @@
+%The paper size, font size and document type are defined in the following
+\documentclass[a4paper,12pt]{article}
+
+%Uncomment the following line, if you write in Finnish (special characters)
+%\usepackage[utf8]{inputenc}
+
+%\usepackage[finnish]{babel}
+\usepackage[english]{babel}
+
+%useful special symbols:
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+%a useful package if you write url addresses:
+\usepackage{url}
+
+%a package for figures:
+\usepackage[dvips]{color}
+\usepackage{epsfig}
+
+%a package for rotated figures and tables:
+\usepackage{rotating}
+
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+%if you want smaller page margins, uncomment and adjust the following
+%\textheight=24.3cm
+%\topmargin=-1.8cm
+%\textwidth=16.7cm
+%\oddsidemargin=-0.3cm
+%\evensidemargin=0.0cm
+
+
+%Create your own environments
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{theorem}{Theorem}
+
+%and useful macrosfor faster writing (benefit: you can change the notations 
+%later, e.g., two possible notations for your vector x)
+\newcommand{\Mmatr}{\ensuremath{\mathbf{M}}}
+\newcommand{\xvec}{\ensuremath{\overline{x}}}
+\newcommand{\xvecII}{\ensuremath{\mathbf{x}}} %alternative def
+\newcommand{\Xset}{\ensuremath{\mathbf{X}}}
+\newcommand{\fr}{\ensuremath{\mathit{fr}}} %just neater typing
+
+%If you want to remove the space before paragraphs uncomment the following.
+%Remember then to leave an empty line between paragraphs! 
+%\setlength{\parindent}{0pt}
+
+
+\title{MDM-2024 Homework N}
+\author{Cuong Nguyen (101559968), Petteri Raita (ID2), and Raihan Gafur (ID3)}
+
+%Uncomment the following, if you don't want the date to be printed
+%\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\listoffigures
+\newpage
+
+% include tex files of sections here, e.g.
+% \input{section1.tex}
+% \input{section2.tex}
+\input{tex/methods.tex}
+\input{tex/relative-constrast.tex}
+\input{tex/min-max-mean-dist.tex}
+\input{tex/variance-dist.tex}
+\input{tex/extra.tex}
+\input{tex/conclusion.tex}
+
+%Bibliography style. The alpha style generates references with 
+%first letters and year. If you prefer numbers, use style plain.
+% \bibliographystyle{alpha}
+% \bibliographystyle{plain}
+% \bibliography{ref}
+
+\printbibliography{}
+
+% Appendices
+% \begin{appendices}
+%   \input{tex/appendices.tex}
+% \end{appendices}
+
+
+\end{document}
