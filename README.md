@@ -15,6 +15,14 @@ scikit-learn
 
 For writting a homework report, we are encouraged to use [LATEX](https://www.latex-project.org/about/)
 
+If your OS is Unix-based, you should install the following packages from your distro-specific package
+managers (e.g. `apt` for Ubuntu):
+```
+texlive
+latexmk
+biber
+```
+
 ### Start a new homework
 Create a new folder containing a report template
 ```sh
