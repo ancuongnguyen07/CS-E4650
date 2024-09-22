@@ -1,10 +1,8 @@
 
 \section{Variance of Distance}\label{sec:variance}
-Present the variance plots for each \( L_p \) and discuss the results. How the curves are behaving when \( k \) increases? Can you characterize the form of curves? What is the effect of \( p \)? If a curve seems to be converging, tell also the value that it is approaching.
 
 
-
-For all the quasinorms, i.e, norms p < 1. The variance grows polynomially. Since the data is a sample of random datapoints, the sample variance is used.
+For all the quasinorms, i.e, norms $p < 1$. The variance grows polynomially. Since the data is a sample of random datapoints, the sample variance is used.
 
 \[
     \text{Var}(X) = \frac{1}{n -1 } \sum_{i=1}^{n} \left(X_i - \mu \right)^2
@@ -19,7 +17,7 @@ Similar to the min-max-mean distance, the variance grows polynomially for all \(
 
 The interesting case was the norms p between 1 and 2. For those norms, the variance goes to infinity but much slower than for the \(p=1\) linear growth.
 
-All variances larger or equal to 2 converge to 0 as k increases. This is behavior is evident in the figure \ref{fig:avg_variance_2_5_inf}.
+All variances larger or equal to 2 converge to 0 as k increases. This is behavior is evident in the~\autoref{fig:avg_variance_2_5_inf}.
 
 
 % \FloatBarrier  % Force the figure to appear after this point
@@ -34,5 +32,5 @@ All variances larger or equal to 2 converge to 0 as k increases. This is behavio
 
 % \FloatBarrier  % Force the figure to appear after this point
 
-In summary, the curves with p < 1 can be characterized as polynomial curves. The curves with $ 1 < p < 2 \propto k^{1/p}$
+In summary, the curves with $p < 1$ can be characterized as polynomial curves. The curves with $ 1 < p < 2 \propto k^{1/p}$ are characterized as inverse polynomial curves.
 
