@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{listings} % For including code
+\usepackage{xcolor}   % For defining code colors
+
+% Define custom colors for the code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Define Python code style
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4
+}
+
+% Apply the style to Python listings
+\lstset{style=mystyle}
+
+\begin{document}
+
+\section{Methods}
+In this experiment, Python was used as the primary programming language, utilizing the libraries \texttt{numpy} for numerical computations and \texttt{matplotlib} for plotting and visualization. The randomization interval for generating the data points was the half-open interval \([0,1[\), excluding the origin. The Lp norms were computed using a custom function:
+
+\lstinputlisting[language=Python]{lp_norm.ipynb}
+
+which supported a range of \(p\) values, including p = 0.5, 0.8, 1, 1.3, 1.5, 1.7, 1.9, 1.95, 2, 5, and \(\infty\). For each experiment, \(q = 100\) data sets, each containing \(N = 100\) points, were generated across various dimensions \((k = 2, 3, 4, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)\).
+
+\section{\textbf{Methods}}
+The relative contrast (Ctr) values across various dimensions and Lp norms highlight the significant impact of dimensionality on the behavior of distance measures. As observed, the contrast starts very high for small dimensions (e.g., $k=2$) and decreases as dimensionality increases. For example, for $p=0.5$, the contrast begins at 27.46 for $k=2$ and gradually converges toward a value around 0.435 when $k=100$, demonstrating that the differences between the farthest and nearest points diminish as dimensionality increases. This reduction in contrast aligns with the general understanding of the curse of dimensionality, where the concentration of distances in high dimensions makes it harder to distinguish between near and far points. The trend is similarly observed for other $p$ values, such as $p=1$, $p=2$, and $L_{\infty}$, though the specific rate of decrease varies.
+
+A closer look at different Lp norms reveals that larger $p$ values tend to produce lower Ctr values in high-dimensional spaces, indicating that higher norms concentrate distances more effectively. For instance, in the case of $L_{\infty}$, the Ctr value decreases from 22.29 at $k=2$ to 0.276 at $k=100$, showing a clear convergence trend. Specifically, for higher $p$ values like $p=2$, the contrast appears to converge around a value of 0.31 as $k$ approaches 100. Lower $p$ norms, such as $p=0.5$, approach a final contrast value of approximately 0.435. These values reflect the final state as distances become nearly uniform at high dimensions. The decrease in contrast across all norms points toward the saturation of distance values in higher dimensions, where distances become relatively similar. In particular, the lower $p$ norms like $p=0.5$ show higher initial contrast, reflecting their sensitivity to small variations, while the convergence rate tends to stabilize more gradually compared to higher $p$ values. These findings highlight how Lp norms influence the spread of distances in high-dimensional spaces, with larger $p$ values converging more quickly to a stable contrast value.
+
+\end{document}
