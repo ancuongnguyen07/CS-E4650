@@ -28,7 +28,7 @@ These new features, along with other ratios such as \textbf{AR} (Aspect Ratio) a
 \subsubsection{Categorical Features - Color Features}
 For the categorical color features, a semantic approach was adopted to improve the effectiveness of clustering. Instead of treating all colors as distinct categories, the similarity between color shades was considered. A hierarchy of colors was developed in which shades with similar base colors were grouped. For example, ``light grey'' and ``bluish grey'' were treated as being closer to each other since they shared the main color, ``grey.'' This approach ensured that the color feature was represented in a way that captured inherent similarities, making the distance metric between instances more meaningful.
 
-\lstinputlisting[language=Python]{../code/color_feature.ipynb}
+\lstinputlisting[language=Python]{code/color_feature.ipynb}
 
 \subsection{Combined Distance Measure}
 The clustering process required a combined distance measure. For that reason, a custom function was used to incorporate both numerical and categorical features using the eq (1).
