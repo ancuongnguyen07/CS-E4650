@@ -1,0 +1,49 @@
+% Question 3 Petteri
+\section{Results}
+\subsection{NMI}
+
+The different clusterings were evaluated for all the different feature combinations, linkage methods, and number of clusters. The scoring for each individual combination of features was based on the NMI of the cluster with the real labels (the biological groupings). However, the best NMI value included 12 clusters of which there were one or more singleton clusters. Since NMI is excessively influenced by the singleton clusters, those were filtered out.
+
+As a result, the highest NMI score for a clustering was 0.727. This score was provided by a combination of 11 cluster with the selected features being AR, wload, WSI, and the back color. The clustering used a complete linkage. Comparing this clustering to the other top candidates in terms of NMI, the common features were very much the same as with the chosen clustering. Only a few combinations dropped the AR or the wload. Out of the best 10 combinations, none used BMI as a feature. This is indicative of the statistically low information provided by the BMI feature. The number of clusters was between 9 and 12, which is a relatively small difference.
+
+\begin{figure*}[ht!]
+    \centering
+    \includegraphics[width=0.8\textwidth,height=\textheight,keepaspectratio]
+    {nmi_scores.png}
+    \caption{\emph{NMI Values}}\label{fig:top_10_NMI_scores}
+\end{figure*}
+
+
+
+% Mutual Information (MI)
+The normalized mutual information score was calculated through the Sklearn library, which uses the following formula for the calculation of the mutual information score. The normalization of the score uses the entropies of the classes and labels to normalize the MI value to fall between 0 and 1.
+
+
+The Mutual Information is a measure of the similarity between a cluster and the biological grouping. In the code, the true labels for NMI score were the 'group' column of the data. The predicted labels were found through fitting the clustering method to the data.
+
+% Where $|U_i|$ is the number of the samples in cluster $U_i$ and $|V_j|$ is the number of the samples in cluster $V_j$, the Mutual Information between clusterings $U$ and $V$ is given as:
+
+\[
+    MI(U, V) = \sum_{i=1}^{|U|} \sum_{j=1}^{|V|} \frac{|U_i \cap V_j|}{N} \log \left( \frac{N |U_i \cap V_j|}{|U_i| |V_j|} \right)
+\]
+
+
+
+\subsection{Analysis of the cluster contents}
+
+
+
+Comparing the clustering results with the actual groups and flying types, it is evident that there are clear common features among the clusters. For example, the cluster contents align well with the flying types, notably clusters 0, 1, and 2, which include only type C, B, and C birds, respectively. Cluster 0 contains only species from the podicipedidae family, while cluster 2 exclusively includes species from the gaviidae family. The biological families are well separated, indicating effective clustering performance.
+
+Regarding the features, we notice that all birds in cluster 8 are dappled brown. Another observation is that all birds in cluster 7 have a WSI (Wingspan Index) of more than 0.9, which is extremely high. This cluster includes hawks such as ruskosuohaukka and haarahaukka, demonstrating a great clustering. WSI is the wingspan divided by the length of the bird, and a high WSI indicates that these birds have a large wingspan compared to their body length. This is intuitive since hawks are excellent fliers.
+Future research should look at the intercluster distance and the similarities of different bird groups. An interesting hypothetical research question would be to look at what are the closest bird groups to the duck family. In our experiment almost all ducks were in the cluster 8. Additionally, the evaluation of the cluster contents could be made more systematic with an algorithm that would categorize the birds inside a cluster to correspond with certain biological trademarks.
+
+
+The clusters were not placed in a dendogram, but the linkage metric dendogram is shown  in the \autoref{fig:linkage-based dendogram}. The dendogram has the actual similar biological groups denoted by the same color. As seen from the groupings of the colors, the dendogram accurately groups birds of the same biological group together. The dendogram is created using the complete linkage with the pairwise distances.
+
+\begin{figure*}[ht!]
+    \centering
+    \includegraphics[width=0.8\textwidth,height=\textheight,keepaspectratio]
+    {dendogram.png}
+    \caption{\emph{dendogram}}\label{fig:linkage-based dendogram}
+\end{figure*}
