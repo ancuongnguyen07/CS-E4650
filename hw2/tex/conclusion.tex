@@ -1,23 +1,22 @@
 \section{Conclusions}
 
-The clustering analysis conducted on the dataset revealed that the optimal
-combination of features for clustering birds was \emph{AR}, \emph{wload},
-\emph{WSI}, and \emph{back} color. Using a complete linkage method, this
-achieved a NMI score of 0.663 with the setting of 11 clusters,
-indicating a strong similarity between the clustering results and the
-true biological groupings. Importantly, \emph{BMI} was consistently
-found to provide minimal informative value, as it was excluded from
-all of the top 10 cluster combinations.
+The clustering analysis effectively identified key features that align well with
+biological groupings and flying types of birds. The highest normalized mutual
+information (\textbf{NMI}) score achieved was 0.727, using a combination of 11 clusters
+with features including aspect ratio (\textbf{AR}), wload, wingspan index (\textbf{WSI}), and
+back color, and employing complete linkage. Importantly, \textbf{BMI} was consistently
+excluded from the top clustering combinations, suggesting its low informative value.
 
-Cluster analysis revealed distinct patterns: clusters 5 and 7 comprised
-only type C fliers, and all birds in cluster 8 were dappled brown.
-Hawks were well-grouped in cluster 4, where all members exhibited high
-\emph{WSI} values, highlighting the biological intuition behind the
-large wingspans of these expert fliers. The dendrogram also accurately
-grouped birds of similar biological groups together, further validating
-the clusering results.
+Analysis of the cluster contents revealed strong biological correlations. For
+instance, clusters 0, 1, and 2 aligned exclusively with type C, B, and C birds,
+respectively, and separated biological families such as podicipedidae and
+gaviidae effectively. Hawks, grouped in cluster 7, displayed a high WSI value,
+reinforcing their flying prowess. Similarly, birds in cluster 8 were all
+dappled brown, showing distinct feature-based clustering.
 
-Overall, the study demonstartes that key features like \emph{AR}, \emph{wload},
-and \emph{WSI} are strong indicators of bird classification, while \emph{BMI}
-is not. Future work could explore inter-cluster relationships, such as
-the proximity of the duck family to other bird groups.
+The results highlight that features like \textbf{AR}, \textbf{wload}, and \textbf{WSI} are significant
+in distinguishing bird groups. Future research could explore inter-cluster
+relationships and develop systematic methods to categorize cluster contents
+based on biological traits. The dendrogram further confirmed the accuracy
+of these groupings, visually clustering birds of the same biological
+families together using complete linkage.
