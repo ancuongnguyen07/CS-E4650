@@ -31,6 +31,19 @@ For the categorical color features, a semantic approach was adopted to improve t
 \lstinputlisting[language=Python]{code/color_feature.ipynb}
 
 \subsection{Combined Distance Measure}
+
+For the numerical features, Euclidean distance was utilized to measure pairwise distances,
+as specified in the exercise requirements. In contrast, pairwise distances for categorical
+color features were calculated using a custom distance metric. First, the color value was
+separated into the main color and its shade. The distance between two main colors was
+determined by the Euclidean distance between their respective RGB values. For color shades,
+the Levenshtein distance was employed, which measures the minimum number of single-character
+edits (insertions, deletions, or substitutions) required to transform one word into another.
+In this case, color shades were represented as strings, such as ``light'', ``dark'', or ``bluish''.
+Consequently, the overall pairwise color distance was a weighted combination of the main color
+distance and the color shade distance, with a weight of 0.8 assigned to the main color distance.
+This weighting reflects the primary role of the main color component in the visual appearance.
+
 The clustering process required a combined distance measure. For that reason, a custom function was used to incorporate both numerical and categorical features using the eq (1).
 
 \begin{equation}
