@@ -1,0 +1,67 @@
+\section{Methods}
+In this section, we describe the methodology employed in the analysis, including feature extraction, distance metric formulation, feature selection, clustering process, and evaluation of clustering quality.
+
+\subsection{Feature Extraction}
+Feature extraction involves creating new variables that capture the underlying patterns in the data and preparing the features for clustering.
+
+\subsubsection{Numerical Features}
+The numerical features in the dataset were initially represented in ranges. To simplify and standardize the data, the \textbf{mean} of each range was taken, resulting in a single representative value per feature. This helped in reducing the complexity and allowed for straight-forward comparisons between data points.
+
+Additionally, several new features were engineered to capture relationships between different measurements. Specifically:
+
+\begin{itemize}
+    \item \textbf{Body Mass Index (BMI):} This was computed as:
+    \[
+    \text{BMI} = \frac{\text{weight}}{\text{length}^2}
+    \]
+    BMI provides a standardized ratio of weight to length, useful for characterizing the relative bulk of the subjects.
+
+    \item \textbf{Wing Span Index (WSI):} This was computed as:
+    \[
+    \text{WSI} = \frac{\text{wspan}}{\text{length}}
+    \]
+    WSI represents the proportion between wing span and length, giving insight into the morphological characteristics.
+\end{itemize}
+
+These new features, along with other ratios such as \textbf{AR} (Aspect Ratio) and \textbf{wload} (Wing Load), were selected for clustering. These ratios collectively capture critical characteristics of the subjects, aiding in distinguishing between different groups.
+
+\subsubsection{Categorical Features - Color Features}
+For the categorical color features, a semantic approach was adopted to improve the effectiveness of clustering. Instead of treating all colors as distinct categories, the similarity between color shades was considered. A hierarchy of colors was developed in which shades with similar base colors were grouped. For example, ``light grey'' and ``bluish grey'' were treated as being closer to each other since they shared the main color, ``grey.'' This approach ensured that the color feature was represented in a way that captured inherent similarities, making the distance metric between instances more meaningful.
+
+\lstinputlisting[language=Python]{../code/color_feature.ipynb}
+
+\subsection{Combined Distance Measure}
+The clustering process required a combined distance measure. For that reason, a custom function was used to incorporate both numerical and categorical features using the eq (1).
+
+\begin{equation}
+    \text{sim}(x, y) = \lambda \cdot \frac{\text{numSim}}{\sigma_n} + (1 - \lambda) \cdot \frac{\text{catSim}}{\sigma_c}
+    \label{eq:1}
+\end{equation}
+
+Here, the value of $\lambda$ has been calculated based of on both numerical and categorical features: 
+\begin{equation}
+    \lambda = \frac{\text{no. numerical features}}{\text{no. numerical features} + \text{no. categorical features}}
+\end{equation}
+
+
+
+\subsection{Feature Selection}
+During feature selection, it was crucial to identify the most informative features while discarding redundant or less relevant ones. The final feature set included four numerical features: \textbf{AR}, \textbf{wload}, \textbf{BMI}, and \textbf{WSI}, and two color features: \textbf{belly} and \textbf{back}. These features were selected because they represented critical morphological and functional characteristics of the subjects. Features like weight, length, and wspan were dropped because \textbf{BMI} was calculated using weight and length, and \textbf{WSI} was derived from wspan and length, making their inclusion redundant.
+
+\subsection{Clustering}
+
+\subsubsection{Method}
+\textbf{Agglomerative Hierarchical Clustering} was chosen as the primary clustering method. This approach is well-suited for datasets where the underlying relationships are unknown, as it allows for visualizing the hierarchical relationships between data points through a dendrogram.
+
+\subsubsection{Linkage Metrics}
+Various linkage metrics have been used, such as \textbf{single}, \textbf{complete}, and \textbf{average} linkage, to determine the optimal grouping. Linkage metrics \textbf{ward} has been dropped from the linkage because ward does not work on pre-computed distance matrix \cite{sklearn_AgglomerativeClustering}.
+
+\subsubsection{Number of Clusters}
+A range of numbers of clusters (range(5, 13)), was considered to get the best combination of clusters.
+
+\subsubsection{Implementation}
+The implementation of the clustering was done using a standard machine learning library such as \texttt{scikit-learn} in Python. The library’s efficient implementation of hierarchical clustering methods would allow for straightforward experimentation with different linkage metrics and cluster numbers.
+
+\subsection{Evaluation}
+For each combination of features, different linkage methods and numbers of clusters were evaluated using agglomerative hierarchical clustering. The \texttt{AgglomerativeClustering} algorithm was applied with the precomputed distance matrix, varying both the number of clusters and the linkage method to determine the optimal clustering configuration. During this process, configurations that produced singleton clusters (clusters containing only a single data point) were skipped, as they excessively impact the normalized mutual information (NMI) score.
+
