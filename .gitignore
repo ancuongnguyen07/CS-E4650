@@ -1,1 +1,16 @@
 */build/
+# Ignore LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.out
+*.pdf
+*.run.xml
+*.synctex.gz
+*.toc
+
