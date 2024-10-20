@@ -1,0 +1,6 @@
+incub_F short-winged -> ccare_F fr=12 (0.2400), cf=0.923, gamma=3.846, delta=0.178, M=6.933e-01 
+dif-gender eat_plants -> anatinae fr=7 (0.1400), cf=1.000, gamma=7.143, delta=0.120, M=5.842e-01 
+webbed-feet dif-gender -> anatinae fr=7 (0.1400), cf=1.000, gamma=7.143, delta=0.120, M=5.842e-01 
+webbed-feet ccare_F -> anatinae fr=7 (0.1400), cf=1.000, gamma=7.143, delta=0.120, M=5.842e-01 
+accipitridae -> ftype_A fr=8 (0.1600), cf=1.000, gamma=5.556, delta=0.131, M=5.437e-01 
+ftype_C incub_F -> ccare_F fr=11 (0.2200), cf=0.846, gamma=3.526, delta=0.158, M=5.014e-01 
