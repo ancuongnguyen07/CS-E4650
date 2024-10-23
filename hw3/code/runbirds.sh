@@ -75,7 +75,7 @@ fi
 printf "\nRun Kingfisher for assocation rule mining...\n"
 # Use MI as the goodness measurement method -w4
 # The intial threshold for MI is 0.5
-$KINGFISHER -i "$TRANSBIRD_FILE.codes" -k170 -M0.4 -w4 -q300 -o $RULES_FILE
+$KINGFISHER -i "$TRANSBIRD_FILE.codes" -k170 -M0.3 -w4 -q300 -o $RULES_FILE
 
 printf "\nConvert bird rules from codes to names...\n"
 $NAMESCODE -c $RULES_FILE -t $NUMCODE_FILE
