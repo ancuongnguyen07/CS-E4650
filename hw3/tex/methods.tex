@@ -1,0 +1,17 @@
+\section{Methods}
+
+In this report, the application of association rule mining techniques was explored to discover patterns within a given dataset (\texttt{birds2024ext.csv}). Association rule mining is recognized as a powerful data analysis method that is commonly used to identify relationships between variables in large datasets. To achieve this, the Kingfisher tool was employed, which allows for the efficient extraction of association rules based on various goodness measures. In this analysis, Mutual Information (MI) was utilized as the criterion for evaluating the strength of the associations.
+
+Feature extraction was performed using Python in Jupyter notebooks for data processing. The extracted features were then subjected to rule mining using Kingfisher, with key parameter settings optimized to ensure that the results were both meaningful and interpretable. The methods used, including the parameter configurations for Kingfisher, are described in detail in this report, and the outcomes of the analysis are discussed.
+
+The methods used in this exploration study include the following details:
+
+\begin{itemize}
+
+    \item \textbf{Programming Language}: Python in Jupyter notebook was used for feature extraction.
+
+    \item \textbf{Kingfisher Parameter Settings}: Kingfisher was utilized for association rule mining with Mutual Information (MI) as the goodness measurement method (parameter \texttt{-w4}). The initial MI threshold was set to 0.3 (parameter \texttt{-M0.3}), and the maximum number of generated rules was limited to 170 (parameter \texttt{-k170}). The search space was constrained with a limit of 300 (parameter \texttt{-q300}).
+
+    \item \textbf{Constraints}: No constraints (\texttt{USE\_CONSTRAINST=false}) have been applied during rule mining.
+
+\end{itemize}
