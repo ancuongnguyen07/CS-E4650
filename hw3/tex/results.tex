@@ -1,0 +1,37 @@
+\section{Results}
+
+Results were divided up according to the MI values. Inside the top 30 associations, we saw interesting features and rules like how the flight type C and incubate female $\Rightarrow$ female care was way stronger in birds with a flying type C (difference of MI 0.501 to 0.465). Also, the lift was larger. Some rules were very intuitive, such as eat fish $\Rightarrow$ diver.
+
+Another interesting part was how strongly the rules for Anatinae were present. Anatinae is the second-level subfamily of the Anatidae, which includes swans, geese, and ducks. Anatinae includes diving ducks and dabbling ducks, which don't feed by diving but rather on the surface. This explains the name ``dabbling,'' which means to splash the surface. \autoref{johnson1999phylogeny}
+
+In general, the Anatinae subfamily is well clustered since the association rules inside the subfamily are very strong. The strongest rules inside the category ranked according to the MI are listed below.
+
+\subsection{Rules Predicting Anatinae}
+\begin{itemize}
+    \item Different appearance between genders, i.e., gender dimorphism
+    \item Eat plants
+    \item A lot of eggs
+    \item Webbed feet, female care
+    \item Flying type C
+\end{itemize}
+
+\subsection{Rules Predicting Lari}
+\begin{itemize}
+    \item Webbed feet
+    \item Plunge dives
+    \item Flight type B
+\end{itemize}
+
+Another great association found was how eating frogs was a good predictor for eating small rodents. This rule makes intuitive sense since eating either would indicate a high size for a bird.
+
+The rules that were found not to be the most relevant were the leaving and return times. They were not found in the top 30 rules based on MI or lift.
+
+\subsection{Improvements}
+Including more birds as data points could improve the results of the association mining. The current data set of 50 birds doesn't capture the whole gamut of different bird species. Alternatively, a different set of results could be produced by using different goodness measures along the MI and selecting the best one. To improve the strength of the rules, the addition of the color as a feature would make the rules more comprehensive.
+
+\subsection{Conclusion}
+
+The strength of the rules predicting Anatinae and Lari indicates that the subfamilies are closely related and that the birds inside the families share multiple same features. This is evident in the high lift values for many of the rules predicting these bird subfamilies. With a lift of more than 7, the excess probability of the consequence appearing based on the antecedent is 7 times more probable.
+
+
+
