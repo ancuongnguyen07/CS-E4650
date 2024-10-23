@@ -1,0 +1,22 @@
+1; Charadriiformes; (shorebirds)
+1.1; Lari; (gulls and terns)
+1.1.1; Laridae; (lokit, gulls)
+1.1.2; Sternidae; (tiirat, terns)
+1.2; Charadrii; (kahlaajat, waders)
+1.2.1; Scolopacidae; (kurpat, sandpipers etc)
+1.2.2; Charadriidae; (kurmitsat, plovers etc)
+1.2.3; Haematopodidae; (meriharakat, oystercatchers)
+2; Anatidae; (ducks, geese, swans)
+2.1; Anatinae; (varsinaiset sorsat, ducks)
+2.1.1; dabbling ducks
+2.1.2; diving ducks
+2.2; Anserinae; (hanhet ja joutsenet, geese and swans)
+3.; Gruiformes
+3.1; Gruidae; (kurjet, cranes)
+3.2; Rallidae; (rantakanat, rails)
+4; Phalacrocoracidae; (merimetsot, cormorants)
+5; Podicipedidae; (uikut, grebes)
+6; Gaviidae; (kuikat, loons)
+7; Ardeidae; (haikarat, herons)
+8; Accipitriformes; (päiväpetolinnut, diurnal birds of prey) 
+8.1; Accipitridae; (hawks, eagles, kites, harriers)

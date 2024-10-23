@@ -1,0 +1,50 @@
+lari eat_fish eat_invertebrates eat_garbage live_lakes live_sea-bays webbed-feet plunge-dives sim-gender ftype_B incub_both ccare_both early-arrival too-few-eggs
+lari eat_fish eat_garbage eat_chicks eat_grain live_lakes live_sea-coast live_marshland webbed-feet plunge-dives sim-gender ftype_B incub_both ccare_both early-arrival late-leave too-few-eggs
+lari eat_fish eat_eggs eat_chicks eat_garbage eat_carrion live_sea-coast live_ harbours webbed-feet plunge-dives sim-gender ftype_B incub_both ccare_both
+lari eat_fish live_lakes live_archipelago webbed-feet plunge-dives sim-gender ftype_B incub_both ccare_both too-few-eggs
+lari eat_fish live_archipelago live_lakes live_marshland webbed-feet plunge-dives sim-gender ftype_B incub_both ccare_both too-few-eggs
+charadrii eat_invertebrates eat_seeds live_marshland live_wetlands long-legs wading-bird dif-gender ftype_C incub_F ccare_F
+charadrii eat_invertebrates live_marshland live_coastal-meadows long-billed wading-bird sim-gender ftype_C incub_F ccare_F late-leave
+charadrii eat_invertebrates eat_worms eat_larvae eat_snails live_forests long-billed wading-bird sim-gender ftype_C incub_F ccare_F early-arrival late-leave
+charadrii eat_invertebrates eat_plants live_forests live_ponds long-billed long-legs wading-bird sim-gender ftype_C incub_both ccare_M early-arrival
+charadrii eat_invertebrates live_marshland live_wetlands long-billed long-legs wading-bird sim-gender ftype_C incub_both ccare_M
+charadrii eat_invertebrates eat_eggs live_archipelago live_islets wading-bird sim-gender ftype_C incub_both ccare_M
+charadrii eat_invertebrates live_coastal-meadows live_wetlands long-billed wading-bird sim-gender ftype_C incub_both ccare_both early-arrival late-leave
+charadrii eat_invertebrates live_shores live_wetlands live_shrub-tundra wading-bird sim-gender ftype_C incub_both ccare_both
+charadrii eat_insects eat_snails live_shores wading-bird sim-gender ftype_C incub_both ccare_both
+charadrii eat_invertebrates eat_snails live_shores wading-bird sim-gender ftype_C incub_both ccare_both early-arrival late-leave
+charadrii eat_insects eat_worms eat_berries live_fells wading-bird sim-gender ftype_C incub_M ccare_M
+charadrii eat_worms eat_insects live_fields wading-bird sim-gender ftype_C incub_both ccare_both early-arrival late-leave
+anatinae eat_plants live_lakes live_marshland live_shores webbed-feet dif-gender ftype_C incub_F ccare_F early-arrival late-leave
+anatinae eat_plants eat_invertebrates live_lakes live_ponds live_streams webbed-feet dif-gender ftype_C incub_F ccare_F short-winged too-many-eggs
+anatinae eat_plants eat_invertebrates live_lakes live_shores webbed-feet dif-gender ftype_C incub_F ccare_F early-arrival late-leave short-winged too-many-eggs
+anatinae eat_plants eat_invertebrates live_lakes live_shores webbed-feet dif-gender ftype_C incub_F ccare_F too-many-eggs
+anatinae eat_plants eat_invertebrates live_shores webbed-feet dif-gender ftype_C incub_F ccare_F late-leave too-many-eggs
+anatinae eat_molluscs eat_insects eat_plants live_lakes live_archipelago diver webbed-feet dif-gender ftype_C incub_F ccare_F early-arrival late-leave short-winged too-many-eggs
+anatinae eat_plants eat_molluscs eat_insects eat_fish live_nutrient-rich-lakes live_sea-bays diver webbed-feet dif-gender ftype_C incub_F ccare_F robust short-winged too-many-eggs
+anserinae eat_grass eat_algae eat_grain live_archipelago webbed-feet sim-gender ftype_C incub_F ccare_both robust
+anserinae eat_plants eat_invertebrates live_archipelago webbed-feet sim-gender ftype_C incub_F ccare_both early-arrival late-leave robust short-winged
+gruiformes eat_plants eat_grain eat_frogs eat_insects eat_small-rodents live_marshland long-billed long-legs wading-bird sim-gender ftype_C incub_both ccare_both early-arrival late-leave too-few-eggs
+rallidae eat_plants eat_vertebrae live_nutrient-rich-lakes live_sea-bays live_reedbeds long-billed long-legs wading-bird sim-gender ftype_C incub_both ccare_both early-arrival too-many-eggs
+rallidae eat_invertebrates eat_plants eat_seeds live_fields live_meadows long-legs wading-bird sim-gender ftype_C incub_F ccare_F too-many-eggs
+rallidae eat_plants eat_invertebrates live_lakes live_sea-bays live_reedbeds long-legs wading-bird sim-gender ftype_C incub_both ccare_both late-leave short-winged
+rallidae eat_insects live_nutrient-rich-lakes live_sea-bays live_reedbeds webbed-feet wading-bird sim-gender ftype_C incub_both ccare_both early-arrival late-leave robust
+rallidae eat_invertebrates eat_algae eat_seeds live_meadows live_reedbeds live_nutrient-rich-lakes wading-bird sim-gender ftype_C incub_both ccare_both too-many-eggs
+phalacrocoracidae eat_fish eat_shellfish live_islets diver long-billed webbed-feet sim-gender ftype_C incub_both ccare_both late-leave short-winged
+podicipedidae eat_fish live_lakes live_sea-bays diver long-billed webbed-feet sim-gender ftype_C incub_both ccare_both late-leave short-winged
+podicipedidae eat_fish eat_shellfish eat_clams live_lakes diver long-billed webbed-feet sim-gender ftype_C incub_both ccare_both late-leave robust
+podicipedidae eat_insects eat_shellfish live_lakes live_ponds diver webbed-feet sim-gender ftype_C incub_both ccare_both robust short-winged
+podicipedidae eat_fish eat_insects eat_shellfish eat_clams live_lakes live_ponds diver webbed-feet sim-gender ftype_C incub_both ccare_both late-leave
+gaviidae eat_fish live_ponds live_lakes diver webbed-feet sim-gender ftype_C incub_both ccare_both late-leave robust too-few-eggs
+gaviidae eat_fish live_lakes live_sea-bays diver webbed-feet sim-gender ftype_C incub_both ccare_both late-leave robust too-few-eggs
+ardeidae eat_fish eat_frogs eat_chicks eat_small-rodents live_reedbeds live_nutrient-rich-lakes live_sea-bays long-billed wading-bird sim-gender ftype_B incub_F ccare_F late-leave short-winged
+ardeidae eat_fish eat_frogs eat_snakes eat_small-rodents eat_chicks live_nutrient-rich-lakes live_sea-bays live_islets long-billed long-legs wading-bird sim-gender ftype_B incub_both ccare_both early-arrival late-leave
+ardeidae eat_frogs eat_worms eat_small-rodents eat_insects eat_snakes live_meadows live_pastures live_wetlands long-billed long-legs wading-bird sim-gender ftype_A incub_both ccare_both
+accipitridae eat_birds eat_small-rodents eat_hares eat_squirrels live_forests sim-gender ftype_A incub_F ccare_both early-arrival late-leave robust
+accipitridae eat_birds eat_small-rodents live_forests sim-gender ftype_A incub_F ccare_both early-arrival
+accipitridae eat_rodents eat_chicks eat_frogs eat_snakes live_forest-edges sim-gender ftype_A incub_both ccare_both early-arrival late-leave
+accipitridae eat_insects eat_eggs eat_chicks eat_frogs eat_small-rodents live_forests live_ forest-edges sim-gender ftype_A incub_both ccare_both too-few-eggs
+accipitridae eat_small-rodents eat_chicks eat_frogs eat_insects live_reedbeds dif-gender ftype_A incub_F ccare_both
+accipitridae eat_small-rodents eat_birds eat_frogs eat_insects live_marshland live_wetlands live_shores dif-gender ftype_A incub_F ccare_both late-leave
+accipitridae eat_fish eat_frogs eat_small-rodents eat_lizards eat_carrion live_shores live_meadows live_forest-edges sim-gender ftype_A incub_both ccare_both late-leave
+accipitridae eat_birds eat_fish eat_carrion live_sea-coast live_lakes plunge-dives sim-gender ftype_A incub_both ccare_both early-arrival late-leave robust too-few-eggs
