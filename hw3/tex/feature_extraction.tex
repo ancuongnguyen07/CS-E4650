@@ -42,17 +42,17 @@ distinctiveness.
         Feature & Description & Extraction Method \\
         \hline
         \textbf{robust} & If a bird's body is robust, indicated by high \textbf{BMI} &
-        True if \textbf{BMI} is higher than the 80th percentile, otherwise False. \\
+        True if \textbf{BMI} $>$ the 80th percentile, otherwise False. \\
         \hline
         \textbf{short-winged} & If the bird has short wings, indicated by low 
-        \textbf{WSI} & True if \textbf{WSI} is lower than the 20th percentile, 
+        \textbf{WSI} & True if \textbf{WSI} $<$ the 20th percentile, 
         otherwise False. \\
         \hline
         \textbf{too-few-eggs} & If a bird has a low number of eggs & True if
-        \textbf{eggs} are lower than the 20th percentile, otherwise False. \\
+        \textbf{eggs} $<$ the 20th percentile, otherwise False. \\
         \hline
         \textbf{too-many-eggs} & If a bird has a high number of eggs & True if
-        \textbf{eggs} are higher than the 80th percentile, otherwise False. \\
+        \textbf{eggs} $>$ the 80th percentile, otherwise False. \\
         \hline
     \end{tabular}
     \caption{Extreme numerical features.}
