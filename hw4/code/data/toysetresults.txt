@@ -1,0 +1,4 @@
+In the toyset you can find 3 alpha-cliques with alpha=0.6 and size>2
+1, 2, 3, 4
+1, 2, 4
+2, 3, 4
