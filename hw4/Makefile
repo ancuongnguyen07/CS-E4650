@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 MAIN=report
-TEXSRC=$(wildcard *.tex)
+TEXSRC=$(wildcard *.tex tex/*.tex)
 BIBSRC=$(wildcard *.bib)
 DIR_BUILD=build
 # OPT= --interaction=nonstopmode

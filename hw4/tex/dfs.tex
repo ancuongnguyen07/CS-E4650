@@ -1,0 +1,61 @@
+\section{Basic depth-first search}
+% Briefly describe the algorithm
+The algorithm is a basic depth-first search (DFS) algorithm that finds all cliques in a graph. The algorithm starts by iterating through all nodes in the graph and calling the DFS function on each node. The DFS function recursively explores the graph starting from the given node and adds nodes to the current clique if they satisfy a certain condition. The algorithm uses a helper function \texttt{shouldAddNode} to determine whether a node should be added to the current clique based on the upper-bound \emph{Theorem}. The algorithm returns a set of all cliques found in the graph.
+
+To avoid adding duplilcated cliques regardless the order of nodes in the clique, the algorithm uses a set data structure to store the cliques.
+
+The Psuedocode for the algorithm is shown in \autoref{alg:basic-dfs}.
+
+
+\SetKwComment{Comment}{/* }{ */}
+\begin{algorithm}
+    \caption{Basic depth-first search}
+    \label{alg:basic-dfs}
+    % \SetKwFunction{FMyFunction}{MyFunction}
+    \SetKwProg{Fn}{Function}{:}{}
+
+    \Fn{shouldAddNode($S$, $graph$, $node$, $\alpha$)}{
+        $superS := S$ union $\{node\}$ \Comment*[r]{Set union operation}
+        \For{$v$ in $S$}{
+            \If{$ f(superS) < 1 - \frac{graph.degree(node) \times (1-\alpha)}{(|S| - 1)\times \alpha}$}{
+                \KwRet{False}
+            }
+            \textbf{end if}
+        }
+        \textbf{end for}
+
+        \KwRet{True}
+    }
+
+    \Fn{DFS($S$, $grah$, $startNode$, $visited$, $cliques$, $\alpha$)}{
+        % Mark the current node as visited
+
+        $visited.add(startNode)$ \Comment*[r]{Set data structure would not allow duplicates}
+        \If{$f(S) \ge \alpha$}{
+            $cliques.add(S)$\;
+        }
+        \textbf{end if}\
+
+        \For{$v$ in $graph.neighbors(startNode)$}{
+            \If{($v$ not in $visited$) and $shouldAddNode(S, graph, v, \alpha)$}{
+                $newS := S$ union $\{v\}$ \Comment*[r]{Set union operation}
+                $DFS(newS, graph, v, visited, cliques, alpha)$\;
+            }
+            \textbf{end if}
+        }
+        \textbf{end for}
+
+        \KwRet
+    }
+
+    $G := (V,E)$ \Comment*[r]{Graph $G$ with vertices $V$ and edges $E$}
+    $cliques := \emptyset$ \Comment*[r]{Set of cliques}
+    \For{$root$ in $G.nodes$}{
+        $visited := \emptyset$ \Comment*[r]{Set of visited nodes}
+        $initialS := \{root\}$\;
+        $DFS(initialS, G, root, \emptyset, cliques, \alpha)$\;
+    }
+    \textbf{end for}
+
+    \KwRet{$cliques$}
+\end{algorithm}
