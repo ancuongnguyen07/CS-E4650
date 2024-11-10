@@ -1,5 +1,0 @@
-\babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Improved Algorithm}{3}{section.1}%
-\contentsline {paragraph}{Pruning Mechanism Using Theorem}{3}{section*.3}%
-\contentsline {paragraph}{Illustration}{3}{section*.4}%
-\contentsline {paragraph}{Impact of Graph Size on \(\alpha \)}{3}{section*.5}%
