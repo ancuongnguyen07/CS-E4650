@@ -1,22 +1,45 @@
-\subsection{Improved Algorithm}
+\section{Improved Algorithm}
 
-- how the algorithm works
+The improved algorithm focuses on the selection of cliques based on the smallest degree nodes and uses a theorem to prune the search space efficiently.
 
-- the improvement is the selection of the cliques with the smallest degree.
-- the algorithm only works by pruning using the Theorem:
+The primary improvement lies in selecting cliques starting with nodes that have the smallest degree, \( \deg(v) \), in the entire graph.
 
-- the theorem formula.
-- the only way to improve the algorithm is to improve the pruning
-- the pruning happens more often only, if the condition happens more often, and none of the supersets of S, can be a-cliques
-- to make the condition true as often as possible, the upper bound on the RHS of the theorem should be maximized
-- to maximize that is to minimize the - (negative part) . this is happening, when the deg(v) is minimized (denoting the degree of neighbours in the total graph)
-- thus the algorithm should always iterate through neighbours in the order from the smallest degree deg(v) to the largest degree as last.
+\begin{theorem}
+    If
+    \[
+        f(S) < 1 - \frac{\deg(v) (1 - \alpha)}{(|S| - 1) \alpha}
+    \]
+    for any \( v \in S \), then none of \( S \)'s supersets can be an \( \alpha \)-clique.
+\end{theorem}
+
+\paragraph{Pruning Mechanism Using Theorem}
+The pruning mechanism is governed by a theorem that sets a condition on when a set \( S \) and its supersets can be classified as non-\( \alpha \)-cliques. For effective pruning:
+\begin{itemize}
+    \item The condition must hold more frequently.
+    \item The upper bound on the right-hand side (RHS) of the theorem must be maximized.
+\end{itemize}
+Maximizing the RHS upper bound involves minimizing the negative term associated with \( \deg(v) \). Therefore, iterating over nodes from the smallest to largest degree makes the pruning happen as often as possible.
+
+\paragraph{Illustration}
+A visual representation of the improvement is shown in Figure~\ref{fig:improved_algorithm}. In the graph, the differing values tested candidates per alpha, show the computation performance of the improved algorithm. For smaller alphas, the effect is more pronounced, but even for the alpha 0.8, the improved algorithm does 47 comparisons less. With alpha reaching 1, there is no difference with the improved and traditional algorithm. This happens, since the RHS of the theorem will become always 1.
+
+The exact values of tested candidates per alpha are:
+
+Alpha      Basic Algorithm      Improved Algorithm
+--------------------------------------------------
+0.5        1613                 1471
+0.6        1261                 1127
+0.7        1006                 902
+0.8        621                  574
 
 
+\paragraph{Impact of Graph Size on \(\alpha\)}
+For future research, the effect of the size of the graph might affect the number of candidates tested. Possbily, in larger graphs, the impact of the improved pruning algorithm, might save more tested candidates.
 
-
-
-- the picture of the improvement in a graph
-- .png
-- explanation if any non-linearities (and thought that whether the alpha value should make a difference there? )
-- discussion how the size of the graph would affect the alpha....
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]
+    {figures/improved_algorithm.png}
+    \caption{Different alphas}
+    \label{fig:improved_algorithm}
+\end{figure}
