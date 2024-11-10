@@ -2,7 +2,7 @@
 % Briefly describe the algorithm
 The algorithm is a basic depth-first search (DFS) algorithm that finds all cliques in a graph. The algorithm starts by iterating through all nodes in the graph and calling the DFS function on each node. The DFS function recursively explores the graph starting from the given node and adds nodes to the current clique if they satisfy a certain condition. The algorithm uses a helper function \texttt{shouldAddNode} to determine whether a node should be added to the current clique based on the \autoref{thm:pruning_theorem}. The algorithm returns a set of all cliques found in the graph.
 
-To avoid adding duplilcated cliques regardless the order of nodes in the clique, the algorithm uses a set data structure to store the cliques.
+To avoid adding duplicated cliques regardless the order of nodes in the clique, the algorithm uses a set data structure to store the cliques.
 
 The Psuedocode for the algorithm is shown in \autoref{alg:basic-dfs}.
 
@@ -30,7 +30,7 @@ The Psuedocode for the algorithm is shown in \autoref{alg:basic-dfs}.
     \Fn{DFS($S$, $grah$, $startNode$, $visited$, $cliques$, $\alpha$)}{
         % Mark the current node as visited
 
-        $visited.add(startNode)$ \Comment*[r]{Set data structure would not allow duplicates}
+        $visited.add(startNode)$ \Comment*[r]{Set data structure does not allow duplicates}
         \If{$f(S) \ge \alpha$}{
             $cliques.add(S)$\;
         }
