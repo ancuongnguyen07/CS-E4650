@@ -1,0 +1,2 @@
+\babel@toc {english}{}\relax 
+\contentsline {subsection}{\numberline {0.1}Improved Algorithm}{3}{subsection.0.1}%
