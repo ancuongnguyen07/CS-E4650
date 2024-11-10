@@ -1,0 +1,102 @@
+\section{Feature Extraction}
+
+Multi-valued features, \textbf{diet} and \textbf{habitat}, were preserved as
+they were. In relation to the biology group, level-3 subgroups were merged
+into their parent level-2 subgroup. For instance, \emph{dabbling ducks} was
+merged into \emph{Anatinae}. By combining these child groups, trivial
+association rules were eliminated without applying rule constraints.
+
+For numerical features (\textbf{length, wspan, weight, eggs}), they were
+originally represented as ranges. To standardize the data, the \emph{mean} of
+each range was calculated, resulting in a single representative value per
+feature. This simplification reduced complexity and facilitated straightforward
+comparisons between data points. Additionally, new features were engineered to
+capture relationships between different measurements. Specifically:
+
+\begin{itemize}
+    \item \textbf{Body Mass Index (BMI):} Computed as:
+    \[
+    \text{BMI} = \frac{\text{weight}}{\text{length}^2}
+    \]
+    \textbf{BMI} provides a standardized ratio of weight to length, which is
+    useful for characterizing the relative bulk of the subjects.
+    
+    \item \textbf{Wing Span Index (WSI):} Computed as:
+    \[
+    \text{WSI} = \frac{\text{wspan}}{\text{length}}
+    \]
+    \textbf{WSI} represents the proportion between wing span and length,
+    giving insight into morphological characteristics.
+\end{itemize}
+
+To obtain non-trivial association rules, extreme values were considered. As
+illustrated in \autoref{tab:extreme-num-vals}, cutoff values were based on the
+20th and 80th percentiles. This approach ensured sufficient data points were
+filtered for further association rule mining while maintaining their
+distinctiveness.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
+        \hline
+        Feature & Description & Extraction Method \\
+        \hline
+        \textbf{robust} & If a bird's body is robust, indicated by high \textbf{BMI} &
+        True if \textbf{BMI} $>$ the 80th percentile, otherwise False. \\
+        \hline
+        \textbf{short-winged} & If the bird has short wings, indicated by low 
+        \textbf{WSI} & True if \textbf{WSI} $<$ the 20th percentile, 
+        otherwise False. \\
+        \hline
+        \textbf{too-few-eggs} & If a bird has a low number of eggs & True if
+        \textbf{eggs} $<$ the 20th percentile, otherwise False. \\
+        \hline
+        \textbf{too-many-eggs} & If a bird has a high number of eggs & True if
+        \textbf{eggs} $>$ the 80th percentile, otherwise False. \\
+        \hline
+    \end{tabular}
+    \caption{Extreme numerical features.}
+    \label{tab:extreme-num-vals}
+\end{table}
+
+Migration month features, \textbf{arrive} and \textbf{leave}, were transformed
+into two new Boolean features: \textbf{early-arrival} and \textbf{late-leave}.
+Initially, \textbf{arrive} and \textbf{leave} were represented as strings, 
+e.g., Jan-April, which were converted into numerical ranges (1-4). From these
+ranges, \textbf{early-arrival} and \textbf{late-leave} were created, as shown
+in \autoref{tab:migration-month-feats}. April and September were selected as 
+cutoff points for early arrival and late leave, respectively, since most birds
+migrate between these months.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
+        \hline
+        Feature & Description & Extraction Method \\
+        \hline
+        \textbf{early-arrival} & If a bird arrives in Finland earlier than usual &
+        True if the earliest month in \textbf{arrive} is earlier than April, otherwise 
+        False. \\
+        \hline
+        \textbf{late-leave} & If a bird leaves Finland later than usual & True if
+        the latest month in \textbf{leave} is later than September, otherwise False. \\
+        \hline
+    \end{tabular}
+    \caption{Migration month features.}
+    \label{tab:migration-month-feats}
+\end{table}
+
+For multi-valued categorical features, such as \textbf{ftype}, \textbf{incub},
+and \textbf{ccare}, each unique value was transformed into a new Boolean 
+feature. For example, \textbf{ftype} had three unique values: \emph{A}, \emph{B}, 
+and \emph{C}. Hence, three new Boolean features (\textbf{ftype-A}, \textbf{ftype-B}, 
+and \textbf{ftype-C}) were created.
+
+For binary features (e.g., "Yes"/"No"), they were converted into Boolean (True/False)
+variables for consistency. Additionally, the binary feature \textbf{sim} was decomposed
+into two distinct Boolean variables: \textbf{sim-gender}, representing the "Yes" values,
+and \textbf{dif-gender}, representing the "No" values. This transformation was performed
+to retain both positive and negative instances of the \textbf{sim} feature, as both were
+considered informative for the association rule mining process.
+
+All extracted features are presented in \autoref{tab:all-features}.

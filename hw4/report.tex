@@ -30,6 +30,7 @@
 \usepackage{rotating}
 
 \usepackage{biblatex}
+\addbibresource{references.bib}
 
 \usepackage{listings} % For including code
 \usepackage{xcolor}   % For defining code colors
@@ -63,8 +64,6 @@
 % Apply the style to Python listings
 \lstset{style=mystyle}
 
-\addbibresource{references.bib}
-
 \graphicspath{ {./figures/} }
 
 %if you want smaller page margins, uncomment and adjust the following
@@ -93,7 +92,7 @@
 %\setlength{\parindent}{0pt}
 
 
-\title{MDM-2024 Homework 2}
+\title{MDM-2024 Homework N}
 \author{Cuong Nguyen (101559968), Petteri Raita (909635),\\and Raihan Gafur (101555441)}
 
 %Uncomment the following, if you don't want the date to be printed
@@ -111,10 +110,6 @@
 % include tex files of sections here, e.g.
 % \input{section1.tex}
 % \input{section2.tex}
-\input{tex/methods.tex}
-\input{tex/results.tex}
-\input{tex/conclusion.tex}
-
 
 %Bibliography style. The alpha style generates references with 
 %first letters and year. If you prefer numbers, use style plain.
@@ -122,12 +117,12 @@
 % \bibliographystyle{plain}
 % \bibliography{ref}
 
-\printbibliography[heading=bibintoc]{}
+\printbibliography{}
 
 % Demo for adding appendices
-\begin{appendices}
-    \input{tex/appendices.tex}
-\end{appendices}
+% \begin{appendices}
+%     \input{tex/appendices.tex}
+% \end{appendices}
 
 
 \end{document}

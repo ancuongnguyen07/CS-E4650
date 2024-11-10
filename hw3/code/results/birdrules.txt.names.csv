@@ -1,0 +1,63 @@
+Rule,Confidence,Lift,Leverage,MI
+dif-gender eat_plants -> anatinae fr=7 (0.1400), cf=1.000, gamma=7.143, delta=0.120, M=5.842e-01 
+webbed-feet dif-gender -> anatinae fr=7 (0.1400), cf=1.000, gamma=7.143, delta=0.120, M=5.842e-01 
+webbed-feet ccare_F -> anatinae fr=7 (0.1400), cf=1.000, gamma=7.143, delta=0.120, M=5.842e-01 
+accipitridae -> ftype_A fr=8 (0.1600), cf=1.000, gamma=5.556, delta=0.131, M=5.437e-01 
+ftype_C incub_F -> ccare_F fr=11 (0.2200), cf=0.846, gamma=3.526, delta=0.158, M=5.014e-01 
+dif-gender ccare_F -> anatinae fr=7 (0.1400), cf=0.875, gamma=6.250, delta=0.118, M=4.973e-01 
+dif-gender ftype_C -> anatinae fr=7 (0.1400), cf=0.875, gamma=6.250, delta=0.118, M=4.973e-01 
+ccare_F eat_plants -> anatinae fr=7 (0.1400), cf=0.875, gamma=6.250, delta=0.118, M=4.973e-01 
+webbed-feet eat_plants -> anatinae fr=7 (0.1400), cf=0.875, gamma=6.250, delta=0.118, M=4.973e-01 
+plunge-dives ftype_B -> lari fr=5 (0.1000), cf=1.000, gamma=10.000, delta=0.090, M=4.690e-01 
+webbed-feet plunge-dives -> lari fr=5 (0.1000), cf=1.000, gamma=10.000, delta=0.090, M=4.690e-01 
+webbed-feet ftype_B -> lari fr=5 (0.1000), cf=1.000, gamma=10.000, delta=0.090, M=4.690e-01 
+wading-bird ftype_C -> charadrii fr=12 (0.2400), cf=0.667, gamma=2.778, delta=0.154, M=4.645e-01 
+ccare_F -> incub_F fr=12 (0.2400), cf=1.000, gamma=2.778, delta=0.154, M=4.645e-01 
+eat_fish ftype_C -> diver fr=7 (0.1400), cf=1.000, gamma=5.556, delta=0.115, M=4.467e-01 
+incub_F eat_plants -> anatinae fr=7 (0.1400), cf=0.778, gamma=5.556, delta=0.115, M=4.467e-01 
+webbed-feet incub_F -> anatinae fr=7 (0.1400), cf=0.778, gamma=5.556, delta=0.115, M=4.467e-01 
+dif-gender too-many-eggs -> anatinae fr=6 (0.1200), cf=1.000, gamma=7.143, delta=0.103, M=4.465e-01 
+webbed-feet too-many-eggs -> anatinae fr=6 (0.1200), cf=1.000, gamma=7.143, delta=0.103, M=4.465e-01 
+dif-gender ftype_C -> ccare_F fr=8 (0.1600), cf=1.000, gamma=4.167, delta=0.122, M=4.139e-01 
+anatinae -> dif-gender fr=7 (0.1400), cf=1.000, gamma=5.000, delta=0.112, M=4.080e-01 
+webbed-feet ccare_F -> dif-gender fr=7 (0.1400), cf=1.000, gamma=5.000, delta=0.112, M=4.080e-01 
+eat_frogs -> eat_small-rodents fr=8 (0.1600), cf=0.889, gamma=4.444, delta=0.124, M=4.008e-01 
+lari -> plunge-dives fr=5 (0.1000), cf=1.000, gamma=8.333, delta=0.088, M=3.910e-01 
+webbed-feet ftype_B -> plunge-dives fr=5 (0.1000), cf=1.000, gamma=8.333, delta=0.088, M=3.910e-01 
+ftype_B incub_both -> lari fr=5 (0.1000), cf=0.833, gamma=8.333, delta=0.088, M=3.910e-01 
+ftype_B ccare_both -> lari fr=5 (0.1000), cf=0.833, gamma=8.333, delta=0.088, M=3.910e-01 
+charadrii -> wading-bird fr=12 (0.2400), cf=1.000, gamma=2.381, delta=0.139, M=3.812e-01 
+ftype_C ccare_F -> anatinae fr=7 (0.1400), cf=0.636, gamma=4.545, delta=0.109, M=3.762e-01 
+sim-gender ccare_both -> incub_both fr=28 (0.5600), cf=0.875, gamma=1.411, delta=0.163, M=3.762e-01 
+dif-gender -> incub_F fr=10 (0.2000), cf=1.000, gamma=2.778, delta=0.128, M=3.651e-01 
+ccare_F too-many-eggs -> anatinae fr=6 (0.1200), cf=0.857, gamma=6.122, delta=0.100, M=3.644e-01 
+incub_F too-many-eggs -> anatinae fr=6 (0.1200), cf=0.857, gamma=6.122, delta=0.100, M=3.644e-01 
+live_lakes webbed-feet incub_both ftype_C -> diver fr=6 (0.1200), cf=1.000, gamma=5.556, delta=0.098, M=3.641e-01 
+live_lakes webbed-feet ccare_both ftype_C -> diver fr=6 (0.1200), cf=1.000, gamma=5.556, delta=0.098, M=3.641e-01 
+live_lakes webbed-feet sim-gender ftype_C -> diver fr=6 (0.1200), cf=1.000, gamma=5.556, delta=0.098, M=3.641e-01 
+ccare_F eat_plants -> too-many-eggs fr=7 (0.1400), cf=0.875, gamma=4.861, delta=0.111, M=3.611e-01 
+webbed-feet incub_both ftype_C -> diver fr=7 (0.1400), cf=0.875, gamma=4.861, delta=0.111, M=3.611e-01 
+anatinae -> ccare_F fr=7 (0.1400), cf=1.000, gamma=4.167, delta=0.106, M=3.491e-01 
+dif-gender eat_plants -> ccare_F fr=7 (0.1400), cf=1.000, gamma=4.167, delta=0.106, M=3.491e-01 
+webbed-feet dif-gender -> ccare_F fr=7 (0.1400), cf=1.000, gamma=4.167, delta=0.106, M=3.491e-01 
+lari -> ftype_B fr=5 (0.1000), cf=1.000, gamma=7.143, delta=0.086, M=3.482e-01 
+webbed-feet plunge-dives -> ftype_B fr=5 (0.1000), cf=1.000, gamma=7.143, delta=0.086, M=3.482e-01 
+live_lakes incub_F -> anatinae fr=5 (0.1000), cf=1.000, gamma=7.143, delta=0.086, M=3.482e-01 
+incub_both -> sim-gender fr=31 (0.6200), cf=1.000, gamma=1.250, delta=0.124, M=3.427e-01 
+webbed-feet ftype_C -> diver fr=9 (0.1800), cf=0.529, gamma=2.941, delta=0.119, M=3.409e-01 
+webbed-feet too-many-eggs -> dif-gender fr=6 (0.1200), cf=1.000, gamma=5.000, delta=0.096, M=3.352e-01 
+ftype_C incub_F -> anatinae fr=7 (0.1400), cf=0.538, gamma=3.846, delta=0.104, M=3.253e-01 
+anatinae -> eat_plants fr=7 (0.1400), cf=1.000, gamma=3.846, delta=0.104, M=3.253e-01 
+ccare_F too-many-eggs -> eat_plants fr=7 (0.1400), cf=1.000, gamma=3.846, delta=0.104, M=3.253e-01 
+incub_F too-many-eggs -> eat_plants fr=7 (0.1400), cf=1.000, gamma=3.846, delta=0.104, M=3.253e-01 
+webbed-feet dif-gender -> eat_plants fr=7 (0.1400), cf=1.000, gamma=3.846, delta=0.104, M=3.253e-01 
+webbed-feet ccare_F -> eat_plants fr=7 (0.1400), cf=1.000, gamma=3.846, delta=0.104, M=3.253e-01 
+ccare_F eat_plants -> dif-gender fr=7 (0.1400), cf=0.875, gamma=4.375, delta=0.108, M=3.231e-01 
+webbed-feet eat_plants -> dif-gender fr=7 (0.1400), cf=0.875, gamma=4.375, delta=0.108, M=3.231e-01 
+webbed-feet incub_both -> eat_fish fr=11 (0.2200), cf=0.846, gamma=2.644, delta=0.137, M=3.205e-01 
+live_lakes -> webbed-feet fr=15 (0.3000), cf=0.882, gamma=2.005, delta=0.150, M=3.199e-01 
+ftype_B incub_both -> plunge-dives fr=5 (0.1000), cf=0.833, gamma=6.944, delta=0.086, M=3.136e-01 
+ftype_B ccare_both -> plunge-dives fr=5 (0.1000), cf=0.833, gamma=6.944, delta=0.086, M=3.136e-01 
+ccare_both eat_small-rodents -> ftype_A fr=7 (0.1400), cf=0.778, gamma=4.321, delta=0.108, M=3.119e-01 
+incub_F eat_plants -> too-many-eggs fr=7 (0.1400), cf=0.778, gamma=4.321, delta=0.108, M=3.119e-01 
+ftype_C ccare_F -> dif-gender fr=8 (0.1600), cf=0.727, gamma=3.636, delta=0.116, M=3.083e-01 
