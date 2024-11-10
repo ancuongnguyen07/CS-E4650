@@ -1,8 +1,8 @@
 \section{Improved Algorithm}
 
 The improved algorithm focuses on the selection of cliques based on the smallest degree nodes and uses a theorem to prune the search space efficiently.
-
 The primary improvement lies in selecting cliques starting with nodes that have the smallest degree, \( \deg(v) \), in the entire graph.
+
 \begin{theorem}
     \label{thm:pruning_theorem} % Label for referencing
     If
@@ -21,31 +21,32 @@ The pruning mechanism is governed by the ~\autoref{thm:pruning_theorem} that set
 Maximizing the RHS upper bound involves minimizing the negative term associated with \( \deg(v) \). Therefore, iterating over nodes from the smallest to largest degree makes the pruning happen as often as possible.
 
 \paragraph{Illustration}
-A visual representation of the improvement is shown in  ~\autoref{fig:improved_algorithm}. In the graph, the differing values tested candidates per alpha, show the computation performance of the improved algorithm. For smaller alphas, the effect is more pronounced, but even for the alpha 0.8, the improved algorithm does 47 comparisons less. With alpha reaching 1, there is no difference with the improved and traditional algorithm. This happens, since the RHS of the theorem will become always 1.
+A visual representation of the improvement is shown in  ~\autoref{fig:improved_algorithm}. In the graph, the differing values tested candidates per  \(\alpha\), show the computation performance of the improved algorithm. For smaller  \(\alpha\) values, the effect is more pronounced, but even for the  \(\alpha = 0.8\) , the improved algorithm does 47 comparisons less. With  \(\alpha\) reaching 1, there is no difference with the improved and traditional algorithm. This happens, since the RHS of the theorem will become always 1. The exact values of \(\alpha\) are show in ~\autoref{tab:tested_candidates}
 
 \begin{table}[h]
     \centering
     \begin{tabular}{ccc}
         \hline
-        Alpha & Basic Algorithm & Improved Algorithm \\
+        \(\alpha\) & Basic Algorithm & Improved Algorithm \\
         \hline
-        0.5   & 1613            & 1471               \\
-        0.6   & 1261            & 1127               \\
-        0.7   & 1006            & 902                \\
-        0.8   & 621             & 574                \\
+        0.5        & 1613            & 1471               \\
+        0.6        & 1261            & 1127               \\
+        0.7        & 1006            & 902                \\
+        0.8        & 621             & 574                \\
         \hline
     \end{tabular}
-    \caption{Exact values of tested candidates per alpha}
+    \caption{Exact values of tested candidates per  \(\alpha\)}
+    \label{tab:tested_candidates} % Added label for referencing
 \end{table}
 
 
 \paragraph{Impact of Graph Size on \(\alpha\)}
-For future research, the effect of the size of the graph might affect the number of candidates tested. Possbily, in larger graphs, the impact of the improved pruning algorithm, might save more tested candidates.
+For future research, the effect of the size of the graph for pruning could be studied. The size might affect the number of candidates tested that the pruning affects. Possbily in larger graphs, the impact of the improved pruning algorithm might save more tested candidates.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]
     {figures/improved_algorithm.png}
-    \caption{Different alphas}
+    \caption{Number of tested candidates per \(\alpha\)}
     \label{fig:improved_algorithm}
 \end{figure}
