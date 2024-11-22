@@ -1,0 +1,84 @@
+\section{Additional Experiments}
+\subsection{Latent Semantic Analysis (LSA)}
+Following the tf-idf transformation, the resulting matrix comprises 3,828
+features across 1,143 documents. Given the high dimensionality of the data,
+applying Latent Semantic Analysis (LSA) is a logical step for dimensionality
+reduction. For this purpose, we employed the \texttt{TruncatedSVD} class from
+the \texttt{sklearn.decomposition} module. As a general guideline, the number
+of components for LSA typically ranges between 100 and 400, depending on the
+dataset's size.
+
+To identify the optimal number of components, a grid search was conducted
+using the same experimental settings as the baseline model. The analysis
+determined that 100 components yielded the best results, as depicted in
+\autoref{fig:optimal_n_component}. The corresponding Davies-Bouldin score of
+3.0 is approximately half that of the baseline model, demonstrating that LSA
+effectively reduces data dimensionality and enhances clustering performance.
+Furthermore, the associated number of clusters is seven.
+
+Building on the LSA-reduced feature matrix, further improvements in clustering
+performance can be achieved by refining the initialization of k-means
+centroids. This approach is discussed in the subsequent section.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=\textheight,width=\textwidth,keepaspectratio]%
+    {optimal_n_component.png}
+    \caption{Davies-Bouldin scores for varying numbers of components in LSA.}
+    \label{fig:optimal_n_component}
+\end{figure}
+
+\subsection{Scatter/Gather --- Buckshot Initialization}
+In the baseline model, the \emph{k-means++} initialization method was employed
+to initialize the centroids. While widely used, this approach does not always
+guarantee optimal performance, as the initial seed selection may lead to
+convergence at a local minimum. To address this limitation, Buckshot
+initialization combined with Agglomerative Clustering was utilized.
+
+The Buckshot initialization method involves randomly sampling a subset of data
+with a size of $\sqrt{K \cdot n}$, where $K$ represents the number of clusters
+and $n$ is the total number of data points. This subset is then clustered
+using Agglomerative Clustering, and the resulting centroids are used as the
+initial seeds for the k-means algorithm. With this initialization, the
+Davies-Bouldin score improved to 2.67, outperforming the LSA-reduced model. The
+associated number of clusters in this configuration is eight, as illustrated in
+\autoref{fig:optimal_k_clusters}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=\textheight,width=\textwidth,keepaspectratio]%
+    {optimal_k_clusters.png}
+    \caption{Davies-Bouldin scores for varying numbers of clusters in the
+        Scatter/Gather Buckshot-initialized model.}
+    \label{fig:optimal_k_clusters}
+\end{figure}
+
+\subsection{Concluded Topics}
+The clustering analysis facilitated the derivation of distinct topics by
+examining the top 20 most common terms within each cluster. The identified
+topics are summarized in \autoref{tab:concluded_topics}.
+
+
+\begin{longtable}{|p{3cm}|p{7cm}|}
+    \hline
+    \textbf{Topic}                                                & \textbf{Top 20 most common terms in each cluster digest             }                                                                                                        \\
+    \hline
+    Robotics and Computer Vision with Machine Learning Approaches & robot, method, imag, system, model, propos, detect, perform, learn, comput, result, base, data, algorithm, vision, network, approach, object, studi, develop                 \\
+    \hline
+    Quantum Computing and Cryptography                            & quantum, comput, secur, compil, algorithm, cryptographi, oper, propos, key, implement, protocol, attack, gate, program, state, circuit, scheme, communic, post-quantum, time \\
+    \hline
+    Programming Languages and Code Optimization                   & compil, program, code, languag, comput, optim, system, graph, implement, memori, paper, parallel, design, applic, perform, transform, algorithm, approach, model, base       \\
+    \hline
+    Database Query Systems                                        & queri, databas, data, sql, relat, languag, system, approach, model, process, execut, user, translat, propos, natur, base, specul, paper, result, algorithm                   \\
+    \hline
+    Data Security and Cryptographic Applications in IoT           & secur, encrypt, propos, data, scheme, key, cryptographi, system, base, algorithm, imag, attack, protocol, comput, implement, iot, authent, provid, applic, paper             \\
+    \hline
+    Mathematical Optimization and Algorithm                       & optim, ti, new, general, triangular, inequ, problem, techniqu, ti-bas, deploy, strength, reduct, algorithm, compil, name, form, x, averag, theori, compiler-bas              \\
+    \hline
+    Database Management Systems and Data Modeling                 & databas, data, relat, system, inform, model, approach, propos, process, manag, ontolog, paper, develop, design, applic, schema, method, base, result, perform                \\
+    \hline
+    Type Systems and Static Analysis for Programming Languages    & type, qualifi, checker, java, framework, programm, system, compil, write, plug-in, error, custom, type-check, languag, semant, code, detect, backward-compat, way, program   \\
+    \hline
+    \caption{Concluded topics and their top 20 most common terms in each cluster digest.}
+    \label{tab:concluded_topics}
+\end{longtable}
