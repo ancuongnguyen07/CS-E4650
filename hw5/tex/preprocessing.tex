@@ -2,14 +2,16 @@
 
 The preprocessing of the language data started with a reading the CSV file and placing it in a Pandas dataframe with columns ID, Title, Abstract, and Text. The column text was a concatenation of the Title and the Abstract. The next steps will be applied on the combined column Text, since that takes into account both the Title and the Abstract, and both of those give information of how to cluster the documents.
 
-The text is then tokenized using the NLTK library, which stands for the Natural Language Toolkit. After tokenization all text is turned into lowercase and numbers are removed. Next the punctuation is removed through comparing the text with the punctuation variable from the python base library string. For removing stopwords, we use the basic stopwords list from NLTK with option 'english' and also update the list with the ellipsis symbol. This step comprises all filtering that is done in preprocessing. The data is later filtered more with an expanded stopwords list based on the observations of the cluster digest terms.
-
+The text is then tokenized using the NLTK library, which stands for the Natural Language Toolkit. After tokenization all text is turned into lowercase and numbers are removed. Next the punctuation is removed through comparing the text with the punctuation variable from the python base library string. For removing stopwords, we use the basic stopwords list from NLTK with option `english' and also update the list with the ellipsis symbol. This step comprises all filtering that is done in preprocessing. The data is later filtered more with an expanded stopwords list based on the observations of the cluster digest terms.
 
 
 The reason why the lowercasing and other preprocessing operations are done is that they, e.g., help matching words that only differ in their case. This makes it easier to find similarities between the texts.
 
 
-After the the cleaning up of the tokens, the operation of stemming is applied. Stemming will shorten the words to their base or root form \autocite[pages 431--434]{aggarwal2015data}. Example of stemming for words ``playing," "played," "player", which all get stemmed to their base form of "play". The stemmer used is the SnowballStemmer, which is an improved version of the Porter stemmer which itself is already one of the most widely used stemmers for English \autocite{porter1980algorithm}. After stemming all tokens get lemmatized which means that through a lookup table and morphological analysis, the words get turned into their base form. The difference with stemming is that lemmatization makes sure that the ouputted base form words are valid words.
+After the the cleaning up of the tokens, the operation of stemming is applied. Stemming will shorten the words to their base or root form \autocite[pages 431--434]{aggarwal2015data}. Example of stemming for words ``playing'', ``played'', ``player'', which all get stemmed to their base form of ``play''. The stemmer used is the SnowballStemmer, which is an improved version of the Porter stemmer which itself is already one of the most widely used stemmers for English \autocite{porter1980algorithm}. After stemming all tokens get lemmatized which means that through a lookup table and morphological analysis, the words get turned into their base form. The difference with stemming is that lemmatization makes sure that the ouputted base form words are valid words.
+
+
+
 
 \subsection{Order of preprocessing steps}
 
@@ -18,7 +20,7 @@ The first steps are logically placed for stemming or lemmatization to reduce the
 
 \subsection{Vectorization}
 
-The rerpresentation of the tokens is then turned into a matrix form, through the TfidVectorizer from the $sklearn.feature_extraction.text$ library. This function creates a matrix that has the documents in the rows and the columns include every unigram and a bigram which pass the required frequency we have set. The requirement for the n-grams to appear on columns is that they need to appear at most in 80\% of the documents and at least in 5 documents. This requirement will prune out words that don't have a high significance in distinguishing different documents from each other. The columns are then scaled to be unit vectors according to their L2 norm. This scaling ensures that the difference in absolute values of the columns don't impact the clustering.
+The rerpresentation of the tokens is then turned into a matrix form, through the TfidVectorizer from the \emph{sklearn.feature\_extraction.text} library. This function creates a matrix that has the documents in the rows and the columns include every unigram and a bigram which pass the required frequency we have set. The requirement for the n-grams to appear on columns is that they need to appear at most in 80\% of the documents and at least in 5 documents. This requirement will prune out words that don't have a high significance in distinguishing different documents from each other. The columns are then scaled to be unit vectors according to their L2 norm. This scaling ensures that the difference in absolute values of the columns don't impact the clustering.
 
 
 
