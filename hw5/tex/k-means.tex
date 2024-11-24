@@ -8,31 +8,19 @@ To understand the thematic composition of the clusters, frequent unigrams and bi
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{|c|p{10cm}|}
+\begin{tabular}{|c|p{4cm}|p{6cm}|}
+\hline 
+\multicolumn{1}{|c|}{\textbf{Cluster}} & \multicolumn{1}{c|}{\textbf{Topic}} & \multicolumn{1}{c|}{\textbf{Top Unigrams and Bigrams}} \\
 \hline
-\textbf{Cluster} & \textbf{Top Unigrams and Bigrams} \\ \hline
-Cluster 1        & compil, program, languag, code, graph, optim, memori, parallel, transform, implement, comput, processor, regist, theori, loop, design, system, type, applic, flow \\ \hline
-Cluster 2        & secur, encrypt, scheme, key, cryptographi, attack, iot, protocol, data, propos, authent, imag, cloud, algorithm, cryptograph, chaotic, system, implement, devic, base \\ \hline
-Cluster 3        & robot, control, soft, system, task, environ, learn, simul, human, model, actuat, perform, materi, optim, develop, soft robot, manipul, sensor, evolv, approach \\ \hline
-Cluster 4        & databas, data, queri, relat, relat databas, system, sql, ontolog, inform, model, schema, approach, manag, process, store, graph, inform system, user, web, semant \\ \hline
-Cluster 5        & imag, detect, vision, method, comput vision, model, learn, object, comput, deep, network, propos, system, video, track, featur, dataset, visual, accuraci, perform \\ \hline
-Cluster 6        & quantum, quantum comput, gate, secur, comput, compil, protocol, cryptographi, qubit, circuit, post quantum, key, attack, algorithm, post, oper, state, communic, quantum cryptographi, program \\ \hline
+1 & Programming Parallel Computers & compil, program, languag, code, graph, optim, memori, parallel, transform, implement, comput, processor, regist, theori, loop, design, system, type, applic, flow \\ \hline
+2 & Cryptography and Cloud Computing & secur, encrypt, scheme, key, cryptographi, attack, iot, protocol, data, propos, authent, imag, cloud, algorithm, cryptograph, chaotic, system, implement, devic, base \\ \hline
+3 & Robotic Systems for Human Centric Tasks & robot, control, soft, system, task, environ, learn, simul, human, model, actuat, perform, materi, optim, develop, soft robot, manipul, sensor, evolv, approach \\ \hline
+4 & Query Optimization in Relational Database Systems & databas, data, queri, relat, relat databas, system, sql, ontolog, inform, model, schema, approach, manag, process, store, graph, inform system, user, web, semant \\ \hline
+5 & Computer Vision in Deep Network Systems & imag, detect, vision, method, comput vision, model, learn, object, comput, deep, network, propos, system, video, track, featur, dataset, visual, accuraci, perform \\ \hline
+6 & Cryptography in Quantum Computing Systems & quantum, quantum comput, gate, secur, comput, compil, protocol, cryptographi, qubit, circuit, post quantum, key, attack, algorithm, post, oper, state, communic, quantum cryptographi, program \\ \hline
 \end{tabular}
 \caption{Frequent unigrams and bigrams for each cluster.}
 \label{tab:ngrams-clusters}
 \end{table}
 
 The frequent terms and phrases highlight the thematic focus of each cluster. For instance, Cluster 1 is characterized by discussions on ``Programming Parallel Computers'', while Cluster 2 focuses on ``Cryptography and Cloud Computing''. Similar thematic insights were derived for other clusters.
-
-\subsection{Conclusion on Topics}
-The clustering results reveal coherent thematic groupings that align with distinct research areas. Frequent terms within the clusters provide valuable insights into the dominant topics. For example:
-\begin{itemize}
-    \item \textbf{Cluster 1:} Programming Parallel Computers
-    \item \textbf{Cluster 2:} Cryptography and Cloud Computing
-    \item \textbf{Cluster 3:} Soft Robotic Systems for Human Centric Tasks
-    \item \textbf{Cluster 4:} Query Optimization in Relational Database Systems
-    \item \textbf{Cluster 5:} Computer Vision in Deep Network Systems
-    \item \textbf{Cluster 6:} Cryptography in Quantum Computing Systems
-\end{itemize}
-
-Overall, the K-means approach successfully identified meaningful topics within the dataset, providing a clear categorization of the underlying research themes. These results demonstrate the utility of K-means clustering in topic detection and thematic analysis.
